@@ -1,26 +1,45 @@
-.header{
+.header {
     display: flex;
     align-items: center;
     justify-content: space-between;
     background-color: $primary-header;
-    // box-shadow: rgba(0, 0, 0, 0.45) 0px 20px 20px -20px;
-    &__logo{
+    &__logo {
         width: 130px;
         padding: 1rem 2rem;
     }
-    &__nav{
-        .nav__list{
-            padding: 2rem;
+    &__nav {
+        .nav__list {
+            padding: 2rem 4rem;
             display: flex;
+            align-items: center;
             gap: 10px;
             list-style: none;
-            .nav__item{
-                .nav__link{
+            .nav__item {
+                .nav__link {
                     color: black;
                     text-decoration: none;
                     font-size: 18px;
-                    &:hover{
+                    &:hover {
                         text-decoration: underline;
+                    }
+                }
+                .nav__link--cartWidget {
+                    position: relative;
+                    font-size: 35px;
+                    display: flex;
+                    flex-direction: column;
+                    margin-right: 15px;
+                    &:after{
+                        content: "1";
+                        position: absolute;
+                        right: -12px;
+                        bottom: 0;
+                        font-size: 14px;
+                        font-family: $numbers;
+                        font-weight: 700;
+                        border-radius: 50%;
+                        padding: 0 5px;
+                        background-color: $primary-home;
                     }
                 }
             }

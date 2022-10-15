@@ -1,7 +1,7 @@
 import React from "react";
-
+import { IoMdCart } from "react-icons/io";
 const CartWidgets = () => {
-  return <div>CartWidgets</div>;
+  return <IoMdCart />;
 };
 
 export default CartWidgets;
