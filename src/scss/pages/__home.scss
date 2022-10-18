@@ -1,3 +1,53 @@
-.greeting{
-    padding: 2rem 4rem;
+.home-container {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: $primary-header;
+    overflow: hidden;
+    .hero {
+        width: 100vw;
+        flex-grow: 1;
+        display: flex;
+        justify-content: space-between;
+        .hero__image {
+            display: flex;
+            justify-content: flex-end;
+            width: 50%;
+            .hero__img {
+                height: 100%;
+            }
+        }
+        .hero__description {
+            display: flex;
+            justify-content: center;
+            margin-top: 80px;
+            margin-left: 50px;
+            .title-container {
+                width: 50%;
+                height: 50%;
+                .greeting {
+                    padding: 2rem 0;
+                }
+                .hero__title {
+                    font-size: 100px;
+                    width: 60%;
+                }
+                .hero__cta {
+                    border: none;
+                    background: $primary-home;
+                    padding: 12px 2rem;
+                    font-family: $secondary;
+                    font-size: 1rem;
+                    font-weight: 600;
+                    cursor: pointer;
+                    transition: all ease-in-out .5s;
+                    &:hover{
+                        background: lighten($color: $primary-home, $amount: 4);
+                        transform: scale(0.96);
+                    } 
+                }
+            }
+        }
+    }
+    
 }

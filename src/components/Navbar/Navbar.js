@@ -6,7 +6,7 @@ const Navbar = () => {
     <nav className="header__nav nav">
       <ul className="nav__list">
         <li className="nav__item">
-          <a href="/" className="nav__link nav__link--cartWidget">
+          <a href="/" className="cart-widgets">
             <CartWidgets />
           </a>
         </li>
