@@ -17,22 +17,17 @@ const Navbar = () => {
         </li>
         <li className="nav__item">
           <a href="/" className="nav__link">
-            Buzos
+            Shop
           </a>
         </li>
         <li className="nav__item">
           <a href="/" className="nav__link">
-            Camperas
+            Productos
           </a>
         </li>
         <li className="nav__item">
           <a href="/" className="nav__link">
-            Pantalones
-          </a>
-        </li>
-        <li className="nav__item">
-          <a href="/" className="nav__link">
-            Accesorios
+            Contacto
           </a>
         </li>
       </ul>

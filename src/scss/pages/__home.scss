@@ -33,8 +33,8 @@
                     width: 60%;
                 }
                 .hero__cta {
-                    border: none;
-                    background: $primary-home;
+                    border: 2px solid $primary-home;
+                    background: none;
                     padding: 12px 2rem;
                     font-family: $secondary;
                     font-size: 1rem;
@@ -43,6 +43,7 @@
                     transition: all ease-in-out .5s;
                     &:hover{
                         background: lighten($color: $primary-home, $amount: 4);
+                        border-color: lighten($color: $primary-home, $amount: 4);
                         transform: scale(0.96);
                     } 
                 }
