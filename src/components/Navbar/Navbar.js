@@ -18,9 +18,7 @@ const Navbar = () => {
       <a href="/" className="nav__link">
         About
       </a>
-      <a href="/" className="nav__link">
-        <CartWidgets />
-      </a>
+      <CartWidgets />
     </nav>
   );
 };
