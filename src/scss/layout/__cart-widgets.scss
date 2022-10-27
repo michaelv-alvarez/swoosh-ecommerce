@@ -1,0 +1,20 @@
+.cart-widgets {
+    position: absolute;
+    top: 0;
+    &__shopping-bag {
+        width: 30px;
+        position: relative;
+    }
+    &__items-counter{
+        position: absolute;
+        font-family: $numbers;
+        font-weight: 700;
+        background-color: #ee4848;
+        border-radius: 50%;
+        font-size: 16px;
+        padding: 0 6px;
+        text-align: center;
+        right: -12px;
+        bottom: 0;
+    }
+}

@@ -1,10 +1,10 @@
 import React from "react";
 import Navbar from "../Navbar/Navbar";
-import logo from "../../logo_transparent_small.png";
+import logo_header from "../../logo_primary-removebg.png";
 const Header = () => {
   return (
     <header className="header">
-      <img src={logo} alt="" className="header__logo" />
+      <img src={logo_header} alt="" className="header__logo" />
       <Navbar />
     </header>
   );

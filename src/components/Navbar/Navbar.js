@@ -1,41 +1,26 @@
 import React from "react";
 import CartWidgets from "../CartWidgets/CartWidgets";
+import logo_letters from "../../logo_letters_transparent.png";
 
 const Navbar = () => {
   return (
-    <nav className="header__nav nav">
-      <ul className="nav__list">
-        <li className="nav__item">
-          <a href="/" className="nav__link nav__link--cartWidget">
-            <CartWidgets />
-          </a>
-        </li>
-        <li className="nav__item">
-          <a href="/" className="nav__link">
-            Home
-          </a>
-        </li>
-        <li className="nav__item">
-          <a href="/" className="nav__link">
-            Buzos
-          </a>
-        </li>
-        <li className="nav__item">
-          <a href="/" className="nav__link">
-            Camperas
-          </a>
-        </li>
-        <li className="nav__item">
-          <a href="/" className="nav__link">
-            Pantalones
-          </a>
-        </li>
-        <li className="nav__item">
-          <a href="/" className="nav__link">
-            Accesorios
-          </a>
-        </li>
-      </ul>
+    <nav className="header__nav">
+      <a href="/" className="nav__link">
+        Home
+      </a>
+      <a href="/" className="nav__link">
+        Shop
+      </a>
+      <img src={logo_letters} alt="Logo letters" className="nav__logo" />
+      <a href="/" className="nav__link">
+        Products
+      </a>
+      <a href="/" className="nav__link">
+        About
+      </a>
+      <a href="/" className="nav__link">
+        <CartWidgets />
+      </a>
     </nav>
   );
 };
