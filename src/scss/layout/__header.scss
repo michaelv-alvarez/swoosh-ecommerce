@@ -68,6 +68,10 @@
                 transition: all .3s ease-in;
                 
             }
+            .active{
+                opacity: 1;
+                visibility: visible;
+            }
             .inactive{
                 opacity: 0;
                 visibility:hidden;
