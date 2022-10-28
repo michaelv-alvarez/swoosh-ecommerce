@@ -4,34 +4,77 @@
     justify-content: center;
     padding-top: 1.5rem;
     position: relative;
-    &__logo{
+    &__logo {
         width: 80px;
         position: absolute;
         left: 2rem;
     }
+    
     &__nav {
         display: flex;
         align-items: center;
         gap: 10px;
         position: relative;
         padding: 1rem 0;
+        
         .nav__link {
+            background: none;
+            border: none;
             color: black;
             text-decoration: none;
             border-radius: 5px;
             font-size: 18px;
             font-family: $secondary;
-            padding: 0 1rem;
+            margin: 0 1rem;
             position: relative;
             cursor: pointer;
-            transition: all .3s ease-in;
-            &:hover{
-                background-color: #ee4848;
+            transition: all 0.3s ease-in;
+            
+            &:after {
+                position: absolute;
+                content: "";
+                height: 3px;
+                width: 100%;
+                top: 100%;
+                left: 0;
+                background: #ee4848;
+                transition: transform 0.5s;
+                transform: scaleX(0);
+                transform-origin: right;
+            }
+            &:hover:after{
+                transform: scaleX(1);
+                transform-origin: left;
             }
         }
-        .nav__logo{
+        
+        .nav__logo {
             width: 150px;
             margin: 0 4rem;
         }
+        .dropdown-menu{
+            position: relative;
+            .dropdown-menu__categories{
+                min-width: max-content;
+                left: 16px;
+                top: 32px;
+                position: absolute;
+                display: flex;
+                flex-direction: column;
+                gap: 12px;
+                border-radius: 5px;
+                padding: 16px 8px;
+                box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+                transition: all .3s ease-in;
+                
+            }
+            .inactive{
+                opacity: 0;
+                visibility:hidden;
+            }
+        }
     }
 }
+
+
+
