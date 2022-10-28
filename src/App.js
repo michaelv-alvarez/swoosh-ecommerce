@@ -1,19 +1,13 @@
-import Header from "./components/Header/Header";
-import ItemListContainer from "./components/ItemListContainer/ItemListContainer";
-import nike_hoodie from "./nike_hoodie.png";
+import { Route, Routes } from "react-router-dom";
+import Home from "./pages/Home/Home";
+import Shop from "./pages/Shop/Shop";
+
 function App() {
   return (
-    <div className="home-container">
-      <Header />
-      <h1 className="home-container__title">THE VINTAGE STORE</h1>
-      <button className="home-container__cta">SHOP NOW</button>
-      <img
-        src={nike_hoodie}
-        alt="nike hoodie"
-        className="home-container__image"
-      />
-      {/* <ItemListContainer greeting="Hello coders!" /> */}
-    </div>
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/shop" element={<Shop />} />
+    </Routes>
   );
 }
 
