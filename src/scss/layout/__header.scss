@@ -5,6 +5,10 @@
     padding: 1rem 0;
     position: relative;
     background: #f1c40f;
+    border-bottom: 1px solid #f5d450;
+    &--shadow{
+        box-shadow: 0px 2px 4px 0px rgb(0 0 0 / 12%);
+    }
     &__logo {
         width: 80px;
         position: absolute;
@@ -79,7 +83,7 @@
                 border-radius: 5px;
                 // padding: 10px 0;
                 box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-                transition: all .3s ease-in;
+                transition: display .5s ease-in;
                 
             }
             .active{

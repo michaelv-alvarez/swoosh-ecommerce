@@ -8,6 +8,9 @@ const Navbar = () => {
   const handleOpen = () => {
     setOpen(!open);
   };
+  const handleLeave = () => {
+    setOpen(false);
+  };
   return (
     <nav className="header__nav">
       <Link to="/" className="nav__link">
@@ -27,28 +30,32 @@ const Navbar = () => {
         <div
           className={`dropdown-menu__categories 
           ${open ? "active" : "inactive"}`}
+          onMouseLeave={handleLeave}
         >
-          <Link to="/" className="nav__link nav__link--category">
+          <Link to="/shop/hoodies" className="nav__link nav__link--category">
             Hoodies
           </Link>
-          <Link to="/" className="nav__link nav__link--category">
+          <Link to="/shop/jackets" className="nav__link nav__link--category">
             Jackets
           </Link>
-          <Link to="/" className="nav__link nav__link--category">
+          <Link to="/shop/pants" className="nav__link nav__link--category">
             Pants
           </Link>
-          <Link to="/" className="nav__link nav__link--category">
+          <Link to="/shop/tshirts" className="nav__link nav__link--category">
             T-shirts
           </Link>
-          <Link to="/" className="nav__link nav__link--category">
+          <Link
+            to="/shop/accessories"
+            className="nav__link nav__link--category"
+          >
             Accessories
           </Link>
         </div>
       </div>
 
-      <a href="/" className="nav__link">
+      <Link to="/about" className="nav__link">
         About
-      </a>
+      </Link>
       <CartWidgets />
     </nav>
   );

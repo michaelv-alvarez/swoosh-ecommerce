@@ -4,7 +4,7 @@ import ItemListContainer from "../../components/ItemListContainer/ItemListContai
 const Shop = () => {
   return (
     <>
-      <Header />
+      <Header showAs={"shadow"} />
       <ItemListContainer />
     </>
   );
