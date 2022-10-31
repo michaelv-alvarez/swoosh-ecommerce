@@ -1,6 +1,9 @@
 @import "./base/_reset";
+@import "./base/_globals";
 @import "./base/_typography";
 @import "./base/_colors";
+
+@import "./helpers/_extends";
 
 @import "./pages/_home";
 @import "./pages/_shop";

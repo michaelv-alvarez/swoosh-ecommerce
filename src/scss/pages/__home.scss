@@ -1,11 +1,10 @@
-.home-container{
-    position: relative;
-    min-height: 100vh;
+.home {
+    height: 100%;
     width: 100%;
-    background-color: #f1c40f;
     display: flex;
     flex-direction: column;
-    &__title{
+    flex-grow: 1;
+    &__title {
         font-family: $hero;
         font-size: 100px;
         font-weight: 600;
@@ -13,26 +12,28 @@
         text-align: center;
         align-self: center;
         margin-top: 9rem;
-        line-height:120px;
+        line-height: 120px;
     }
-    &__cta{
+    &__cta {
+        font: {
+            family: $secondary;
+            weight: bold;
+            size: 14px;
+        }
         width: 180px;
-        border: none;
         padding: 16px 32px;
-        background-color:#ee4848;
+        background-color: #ee4848;
         border-radius: 5px;
-        font-family: $secondary;
-        font-weight: bold;
-        font-size: 14px;
+        text-align: center;
         letter-spacing: 2px;
         align-self: center;
         margin-top: 2.5rem;
         cursor: pointer;
     }
-    &__image{
+    &__image {
         width: 550px;
         position: absolute;
         left: 300px;
         bottom: 0;
-    }  
+    }
 }

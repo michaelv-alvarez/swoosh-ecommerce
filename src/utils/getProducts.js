@@ -8,7 +8,7 @@ export const getProducts = () => {
   let productsPromise = new Promise((res) => {
     setTimeout(() => {
       res(initialProducts);
-    }, 2000);
+    }, 1000);
   });
   return productsPromise;
 };
@@ -26,6 +26,13 @@ export const getProductsByCategory = (category) => {
     (product) => product.category === category
   );
   return productsByCategory;
+};
+
+export const getProductDetail = (id) => {
+  let producDetail = initialProducts.find((product) => {
+    return product.id === id;
+  });
+  return producDetail;
 };
 
 export const convertToPath = (category) => {

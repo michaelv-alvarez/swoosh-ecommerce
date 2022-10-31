@@ -38,31 +38,14 @@ const Navbar = () => {
           {categories.map((category) => {
             return (
               <Link
-                to={`/shop/${category}`}
+                to={`/shop/category/${category}`}
                 className="nav__link nav__link--category"
+                key={category}
               >
                 {category}
               </Link>
             );
           })}
-          {/* <Link to="/shop/hoodies" className="nav__link nav__link--category">
-            Hoodies
-          </Link>
-          <Link to="/shop/jackets" className="nav__link nav__link--category">
-            Jackets
-          </Link>
-          <Link to="/shop/pants" className="nav__link nav__link--category">
-            Pants
-          </Link>
-          <Link to="/shop/tshirts" className="nav__link nav__link--category">
-            T-shirts
-          </Link>
-          <Link
-            to="/shop/accessories"
-            className="nav__link nav__link--category"
-          >
-            Accessories
-          </Link> */}
         </div>
       </div>
 
