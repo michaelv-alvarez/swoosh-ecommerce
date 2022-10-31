@@ -22,9 +22,9 @@ export const getCategories = () => {
 };
 
 export const getProductsByCategory = (category) => {
-  let productsByCategory = initialProducts.filter((product) => {
-    return product.category === category;
-  });
+  let productsByCategory = initialProducts.filter(
+    (product) => product.category === category
+  );
   return productsByCategory;
 };
 
