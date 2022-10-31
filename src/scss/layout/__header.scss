@@ -64,6 +64,20 @@
                     background: #ee4848;
                 }
             }
+            &.active{
+                &:after{
+                position: absolute;
+                content: "";
+                height: 3px;
+                width: 100%;
+                top: 100%;
+                left: 0;
+                background: #ee4848;
+                transition: transform 0.5s;
+                transform: scaleX(1);
+                transform-origin: right;
+                }
+            }
         }
         
         .nav__logo {

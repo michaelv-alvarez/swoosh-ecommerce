@@ -1,9 +1,12 @@
 import React, { useState } from "react";
 import CartWidgets from "../CartWidgets/CartWidgets";
 import logo_letters from "../../logo_letters_transparent.png";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
+import { getCategories } from "../../utils/getProducts";
 
 const Navbar = () => {
+  const categories = getCategories();
+
   const [open, setOpen] = useState(false);
   const handleOpen = () => {
     setOpen(!open);
@@ -16,9 +19,9 @@ const Navbar = () => {
       <Link to="/" className="nav__link">
         Home
       </Link>
-      <Link to="/shop" className="nav__link">
+      <NavLink to="/shop" className="nav__link">
         Shop
-      </Link>
+      </NavLink>
       <Link to="/">
         <img src={logo_letters} alt="Logo letters" className="nav__logo" />
       </Link>
@@ -32,7 +35,17 @@ const Navbar = () => {
           ${open ? "active" : "inactive"}`}
           onMouseLeave={handleLeave}
         >
-          <Link to="/shop/hoodies" className="nav__link nav__link--category">
+          {categories.map((category) => {
+            return (
+              <Link
+                to={`/shop/${category}`}
+                className="nav__link nav__link--category"
+              >
+                {category}
+              </Link>
+            );
+          })}
+          {/* <Link to="/shop/hoodies" className="nav__link nav__link--category">
             Hoodies
           </Link>
           <Link to="/shop/jackets" className="nav__link nav__link--category">
@@ -49,13 +62,13 @@ const Navbar = () => {
             className="nav__link nav__link--category"
           >
             Accessories
-          </Link>
+          </Link> */}
         </div>
       </div>
 
-      <Link to="/about" className="nav__link">
+      <NavLink to="/about" className="nav__link">
         About
-      </Link>
+      </NavLink>
       <CartWidgets />
     </nav>
   );
