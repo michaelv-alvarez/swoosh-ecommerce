@@ -1,12 +1,13 @@
 .products {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-    gap: 2rem 1rem;
-    padding: 1rem 7rem;
+    grid-template-columns: repeat(auto-fill, minmax(330px, 1fr));
+    gap: 2rem;
+    padding: 1rem 320px;
     .product__card {
         @extend %card__base;
 
         &.card {
+            
             .card__image {
                 width: 100%;
                 padding: 10px;
@@ -19,6 +20,8 @@
                 text-align: center;
                 .card__title {
                     @extend %card__title;
+                    color: #5C3551;
+                    
                 }
                 .card__price {
                     @extend %card__price;

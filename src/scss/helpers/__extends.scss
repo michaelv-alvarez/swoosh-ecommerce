@@ -1,11 +1,17 @@
 %card__title {
-    font-family: $secondary;
-    font-size: 1.5rem;
+    font: {
+        weight: 600;
+        family: $secondary;
+        size: 1.5rem;
+    }
     color: #454d5a;
 }
 %card__price {
-    font-family: $numbers;
-    font-size: 1.2rem;
+    font: {
+        weight: 500;
+        family: $numbers;
+        size: 1.3rem;
+    }
     color: #666666;
 }
 %card__base{
