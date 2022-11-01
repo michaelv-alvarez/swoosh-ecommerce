@@ -10,14 +10,21 @@ const ItemDetailContainer = () => {
   const [product, setProduct] = useState([]);
 
   useEffect(() => {
-    if (id) {
-      const productDetail = getProductDetail(id);
-      setProduct(productDetail);
-    }
+    id &&
+      getProductDetail(id)
+        .then((response) => {
+          setProduct(response);
+        })
+        .catch((error) => console.log(error));
   }, [id]);
   return (
     <>
-      <Item {...product} showAs={"Detail"} />
+      {product ? (
+        <Item {...product} showAs={"Detail"} />
+      ) : (
+        <h5>Cargando detalles...</h5>
+      )}
+      {/* <Item {...product} showAs={"Detail"} /> */}
     </>
   );
 };

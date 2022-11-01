@@ -29,10 +29,12 @@ export const getProductsByCategory = (category) => {
 };
 
 export const getProductDetail = (id) => {
-  let producDetail = initialProducts.find((product) => {
-    return product.id === id;
+  let productsPromise = new Promise((res) => {
+    setTimeout(() => {
+      res(initialProducts.find((product) => product.id === id));
+    }, 1000);
   });
-  return producDetail;
+  return productsPromise;
 };
 
 export const convertToPath = (category) => {

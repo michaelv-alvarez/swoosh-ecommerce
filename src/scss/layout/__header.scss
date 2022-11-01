@@ -85,6 +85,7 @@
             margin: 0 4rem;
         }
         .dropdown-menu{
+            z-index: 500;
             position: relative;
             .dropdown-menu__categories{
                 background: #f1c40f;
