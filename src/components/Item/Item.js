@@ -6,11 +6,17 @@ const Item = ({ title, image, price, id, description, showAs }) => {
   if (showAs === "Detail") {
     return (
       <div className="detail__card card">
-        <img src={temp_img} alt={title} className="card__image" />
+        <div className="card__image">
+          <img src={temp_img} alt={title} className="image" />
+        </div>
         <div className="card__body">
-          <h3 className="card__title">{title}</h3>
+          <div className="card__header">
+            <h3 className="card__title">{title}</h3>
+            <span className="card__price">${price}</span>
+          </div>
+
           <div className="card__description">{description}</div>
-          <span className="card__price">${price}</span>
+          <button className="card__button">ADD TO CART</button>
         </div>
       </div>
     );

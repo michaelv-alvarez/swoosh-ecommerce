@@ -17,11 +17,13 @@ const ItemListContainer = () => {
 
   return (
     <>
-      <h1 className="shop__title">Products</h1>
       {items.length === 0 ? (
         <h3 className="shop__loader">Cargando...</h3>
       ) : (
-        <ItemList items={category ? getProductsByCategory(category) : items} />
+        <ItemList
+          items={category ? getProductsByCategory(category) : items}
+          categoryName={category}
+        />
       )}
     </>
   );
