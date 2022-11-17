@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 const temp_img =
-  "https://res.cloudinary.com/dtpfo51rx/image/upload/v1667322354/swoosh/products/img/jackets/85-Vintage-Nike-Puffer-Jacket-1_large-removebg-preview_pmzzlz.png";
+  "https://res.cloudinary.com/dtpfo51rx/image/upload/v1668649993/swoosh/products/85-Vintage-Nike-Puffer-Jacket-1_600x-PhotoRoom_nj8pz7.png";
 const Item = ({ title, image, price, id, description, showAs }) => {
   if (showAs === "Detail") {
     return (
