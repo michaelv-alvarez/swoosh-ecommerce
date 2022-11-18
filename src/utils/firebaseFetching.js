@@ -1,24 +1,27 @@
-import { collection, getDocs } from "firebase/firestore";
+import { collection, doc, getDoc, getDocs } from "firebase/firestore";
 import { db } from "../firebase";
 
 const productsCollection = collection(db, "products");
 
 export const getAllProducts = async () => {
-  const request = getDocs(productsCollection);
-  const response = await request;
-  const data = response.docs.map((doc) => ({ ...doc.data(), id: doc.id }));
-  return data;
+  try {
+    const request = getDocs(productsCollection);
+    const response = await request;
+    const data = response.docs.map((doc) => ({ ...doc.data(), id: doc.id }));
+    return data;
+  } catch (error) {
+    console.log(error);
+  }
 };
 
-const consulta = getDocs(productsCollection);
-consulta
-  .then((resultado) => {
-    const products = resultado.docs.map((doc) => ({
-      ...doc.data(),
-      id: doc.id,
-    }));
-    return products;
-  })
-  .catch((error) => {
+export const getProductById = async (id) => {
+  try {
+    const docReference = doc(productsCollection, id);
+    const request = getDoc(docReference);
+    const response = await request;
+    const data = response.data();
+    return data;
+  } catch (error) {
     console.log(error);
-  });
+  }
+};

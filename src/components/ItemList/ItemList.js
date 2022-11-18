@@ -1,6 +1,6 @@
 import React from "react";
 import Item from "../Item/Item";
-const ItemList = ({ items, categoryName }) => {
+const ItemList = ({ products, categoryName }) => {
   return (
     <>
       <h1 className="products__path">
@@ -8,8 +8,8 @@ const ItemList = ({ items, categoryName }) => {
       </h1>
 
       <div className="products">
-        {items.map((item) => {
-          return <Item key={item.id} {...item} />;
+        {products.map((product) => {
+          return <Item key={product.id} product={product} />;
         })}
       </div>
     </>

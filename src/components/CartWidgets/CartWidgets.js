@@ -1,7 +1,12 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import shopping_bag from "../../shopping-bag.svg";
-
+import { useCartContext } from "../../context/cart/CartState";
 const CartWidgets = () => {
+  const [total, setTotal] = useState();
+  const { getNumberOfItems } = useCartContext();
+  useEffect(() => {
+    setTotal(getNumberOfItems());
+  }, [getNumberOfItems]);
   return (
     <div className="cart-widgets">
       <img
@@ -9,7 +14,7 @@ const CartWidgets = () => {
         alt="shopping bag"
         className="cart-widgets__shopping-bag"
       />
-      <span className="cart-widgets__items-counter">3</span>
+      <span className="cart-widgets__items-counter">{total}</span>
     </div>
   );
 };

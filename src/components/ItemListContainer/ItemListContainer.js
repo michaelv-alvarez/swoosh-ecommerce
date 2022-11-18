@@ -22,7 +22,7 @@ const ItemListContainer = () => {
         <h3 className="shop__loader">Cargando...</h3>
       ) : (
         <ItemList
-          items={category ? getProductsByCategory(category) : items}
+          products={category ? getProductsByCategory(category) : items}
           categoryName={category}
         />
       )}
