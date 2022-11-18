@@ -1,18 +1,19 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { getProducts, getProductsByCategory } from "../../utils/getProducts";
 import ItemList from "../ItemList/ItemList";
+import { getProductsByCategory } from "../../utils/getProducts";
+import { getAllProducts } from "../../utils/firebaseFetching";
 
 const ItemListContainer = () => {
   const [items, setItems] = useState([]);
   const { category } = useParams();
 
+  const fetchProducts = async () => {
+    const data = await getAllProducts();
+    setItems(data);
+  };
   useEffect(() => {
-    getProducts()
-      .then((response) => {
-        setItems(response);
-      })
-      .catch((error) => console.log(error));
+    fetchProducts();
   }, []);
 
   return (

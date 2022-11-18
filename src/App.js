@@ -4,9 +4,6 @@ import ItemDetailContainer from "./components/ItemDetailContainer/ItemDetailCont
 import ItemListContainer from "./components/ItemListContainer/ItemListContainer";
 import About from "./pages/About/About";
 import Home from "./pages/Home/Home";
-import { app } from "./firebase";
-
-console.log(app);
 
 function App() {
   return (
