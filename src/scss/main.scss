@@ -5,12 +5,15 @@
 
 @import "./helpers/_extends";
 
-@import "./pages/_home";
-@import "./pages/_shop";
+@import "./components/_loader";
 
 @import "./layout/_header";
 @import "./layout/_cart-widgets";
 @import "./layout/_products";
+
+@import "./pages/_home";
+
+
 
 
 

@@ -1,33 +1,34 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import ItemList from "../ItemList/ItemList";
-import { getProductsByCategory } from "../../utils/getProducts";
-import { getAllProducts } from "../../utils/firebaseFetching";
+import {
+  getAllProducts,
+  getProductsByCategory,
+} from "../../utils/firebaseFetching";
+import Loader from "../Loader/Loader";
 
 const ItemListContainer = () => {
+  const [loading, setLoading] = useState(true);
   const [items, setItems] = useState([]);
   const { category } = useParams();
 
   const fetchProducts = async () => {
-    const data = await getAllProducts();
-    setItems(data);
+    const products = await getAllProducts();
+    setItems(products);
+    setLoading(false);
+  };
+
+  const fetchProductsByCategory = async (cat) => {
+    const products = await getProductsByCategory(cat);
+    setItems(products);
+    setLoading(false);
   };
   useEffect(() => {
-    fetchProducts();
-  }, []);
+    category ? fetchProductsByCategory(category) : fetchProducts();
+    console.log("effect");
+  }, [category]);
 
-  return (
-    <>
-      {items.length === 0 ? (
-        <h3 className="shop__loader">Cargando...</h3>
-      ) : (
-        <ItemList
-          products={category ? getProductsByCategory(category) : items}
-          categoryName={category}
-        />
-      )}
-    </>
-  );
+  return <>{loading ? <Loader /> : <ItemList products={items} />}</>;
 };
 
 export default ItemListContainer;

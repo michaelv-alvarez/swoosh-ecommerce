@@ -1,13 +1,16 @@
 .products__path{
-    margin: 2rem 20rem .5rem;
+    width: 60vw;
+    margin: 1em auto 0;
     font-family: $numbers;
     font-size: 1.2rem;
+    text-transform: capitalize;
 }
 .products {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(330px, 1fr));
     gap: 2rem;
-    padding: 0 20rem;
+    width: 60vw;
+    margin: 1em auto 3em;
     .product__card {
         @extend %card__base;
         border: 1px solid #CACACA;

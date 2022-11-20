@@ -1,11 +1,12 @@
 import React from "react";
 import Item from "../Item/Item";
-const ItemList = ({ products, categoryName }) => {
+const ItemList = ({ products, category }) => {
   return (
     <>
-      <h1 className="products__path">
-        {categoryName ? `Products  >  ${categoryName}` : "All products"}
-      </h1>
+      {/* <h1 className="products__path">
+        {category ? `Shop  >  ${category}` : "Shop"}
+      </h1> */}
+      <h1 className="products__path">Shop</h1>
 
       <div className="products">
         {products.map((product) => {

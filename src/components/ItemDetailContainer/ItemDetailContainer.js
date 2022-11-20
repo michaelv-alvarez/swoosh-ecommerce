@@ -4,14 +4,17 @@ import { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { getProductById } from "../../utils/firebaseFetching";
 import Item from "../Item/Item";
+import Loader from "../Loader/Loader";
 
 const ItemDetailContainer = () => {
   const { id } = useParams();
+  const [loading, setLoading] = useState(true);
   const [product, setProduct] = useState([]);
 
   const fetchProduct = async () => {
     const data = await getProductById(id);
     setProduct(data);
+    setLoading(false);
   };
 
   useEffect(() => {
@@ -19,12 +22,11 @@ const ItemDetailContainer = () => {
   }, [id]);
   return (
     <>
-      {product ? (
-        <Item product={{ id, ...product }} showAs={"Detail"} />
+      {loading ? (
+        <Loader />
       ) : (
-        <h5>Cargando detalles...</h5>
+        <Item product={{ id, ...product }} showAs={"Detail"} />
       )}
-      {/* <Item {...product} showAs={"Detail"} /> */}
     </>
   );
 };

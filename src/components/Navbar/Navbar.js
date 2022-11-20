@@ -2,18 +2,26 @@ import React, { useState } from "react";
 import CartWidgets from "../CartWidgets/CartWidgets";
 import logo_letters from "../../logo_letters_transparent.png";
 import { Link, NavLink } from "react-router-dom";
-import { getCategories } from "../../utils/getProducts";
+import { getCategories } from "../../utils/firebaseFetching";
+import { useEffect } from "react";
 
 const Navbar = () => {
-  const categories = getCategories();
-
   const [open, setOpen] = useState(false);
+  const [categories, setCategories] = useState([]);
+
+  const fetchCategories = async () => {
+    setCategories(await getCategories());
+  };
   const handleOpen = () => {
     setOpen(!open);
   };
   const handleLeave = () => {
     setOpen(false);
   };
+
+  useEffect(() => {
+    fetchCategories();
+  }, [categories]);
   return (
     <nav className="header__nav">
       <Link to="/" className="nav__link">
@@ -35,17 +43,18 @@ const Navbar = () => {
           ${open ? "active" : "inactive"}`}
           onMouseLeave={handleLeave}
         >
-          {categories.map((category) => {
-            return (
-              <Link
-                to={`/shop/category/${category}`}
-                className="nav__link nav__link--category"
-                key={category}
-              >
-                {category}
-              </Link>
-            );
-          })}
+          {categories &&
+            categories.map((category) => {
+              return (
+                <Link
+                  to={`/shop/category/${category.name}`}
+                  className="nav__link nav__link--category"
+                  key={category.id}
+                >
+                  {category.name}
+                </Link>
+              );
+            })}
         </div>
       </div>
 
