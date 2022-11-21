@@ -26,6 +26,9 @@ const Item = ({ product, showAs }) => {
       </div>
     );
   }
+  if (showAs === "CartItem") {
+    return <div>{product.title}</div>;
+  }
   return (
     <>
       <Link to={`/item/detail/${product.id}`}>

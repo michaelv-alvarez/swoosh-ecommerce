@@ -1,4 +1,5 @@
 import { Route, Routes } from "react-router-dom";
+import Cart from "./components/Cart/Cart";
 import Header from "./components/Header/Header";
 import ItemDetailContainer from "./components/ItemDetailContainer/ItemDetailContainer";
 import ItemListContainer from "./components/ItemListContainer/ItemListContainer";
@@ -31,6 +32,7 @@ function App() {
               element={<h1>Error 404 - Pagina no encontrada.</h1>}
             />
           </Routes>
+          <Cart />
         </CartState>
       </div>
     </>

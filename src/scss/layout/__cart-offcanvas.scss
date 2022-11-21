@@ -1,0 +1,23 @@
+.cart {
+    height: 100%;
+    background-color: #efefef;
+    width: 0;
+    position: fixed;
+    z-index: 600;
+    top: 0;
+    right: 0;
+    overflow-x: hidden;
+    transition: 0.3s ease-out;
+    &.show{
+        width: 500px;
+    }
+    &__close{
+        width: 30px;
+        height: 30px;
+        margin: 5px;
+        cursor: pointer;
+    }
+    &__content{
+        padding: 1em;
+    }
+}
