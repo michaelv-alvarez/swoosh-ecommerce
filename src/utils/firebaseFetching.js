@@ -10,15 +10,26 @@ import { db } from "../firebase";
 
 const productsCollection = collection(db, "products");
 const categoriesCollection = collection(db, "categories");
+// export const getAllProducts = async () => {
+//   try {
+//     const request = getDocs(productsCollection);
+//     const response = await request;
+//     const data = response.docs.map((doc) => ({ ...doc.data(), id: doc.id }));
+//     return data;
+//   } catch (error) {
+//     console.log(error);
+//   }
+// };
 export const getAllProducts = async () => {
-  try {
-    const request = getDocs(productsCollection);
-    const response = await request;
-    const data = response.docs.map((doc) => ({ ...doc.data(), id: doc.id }));
-    return data;
-  } catch (error) {
-    console.log(error);
-  }
+  const request = getDocs(productsCollection);
+  request
+    .then((response) => {
+      const data = response.docs.map((doc) => ({ ...doc.data(), id: doc.id }));
+      return data;
+    })
+    .catch((error) => {
+      console.log(error);
+    });
 };
 
 export const getProductById = async (id) => {
