@@ -12,11 +12,11 @@ const ItemListContainer = () => {
   const [items, setItems] = useState([]);
   const { category } = useParams();
 
-  // const fetchProducts = async () => {
-  //   const products = await getAllProducts();
-  //   setItems(products);
-  //   setLoading(false);
-  // };
+  const fetchProducts = async () => {
+    const products = await getAllProducts();
+    setItems(products);
+    setLoading(false);
+  };
 
   const fetchProductsByCategory = async (cat) => {
     const products = await getProductsByCategory(cat);
@@ -24,11 +24,10 @@ const ItemListContainer = () => {
     setLoading(false);
   };
   useEffect(() => {
-    // category ? fetchProductsByCategory(category) : fetchProducts();
-    getAllProducts().then((data) => setItems(data));
+    category ? fetchProductsByCategory(category) : fetchProducts();
     setLoading(false);
-    // console.log("effect");
-  }, []);
+    console.log("Get all products effect");
+  }, [category]);
 
   return <>{loading ? <Loader /> : <ItemList products={items} />}</>;
 };

@@ -8,7 +8,6 @@ import { useEffect } from "react";
 const Navbar = () => {
   const [open, setOpen] = useState(false);
   const [categories, setCategories] = useState([]);
-
   const fetchCategories = async () => {
     const data = await getCategories();
     setCategories(data);
@@ -22,8 +21,8 @@ const Navbar = () => {
 
   useEffect(() => {
     fetchCategories();
-    console.log("effect");
-  }, [categories]);
+    console.log("Get all categories effect");
+  }, []);
   return (
     <nav className="header__nav">
       <Link to="/" className="nav__link">
