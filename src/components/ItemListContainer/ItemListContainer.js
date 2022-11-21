@@ -25,8 +25,6 @@ const ItemListContainer = () => {
   };
   useEffect(() => {
     category ? fetchProductsByCategory(category) : fetchProducts();
-    setLoading(false);
-    console.log("Get all products effect");
   }, [category]);
 
   return <>{loading ? <Loader /> : <ItemList products={items} />}</>;

@@ -8,7 +8,8 @@ const CartWidgets = () => {
     openCart();
   };
   useEffect(() => {
-    setTotal(getNumberOfItems());
+    const numberOfItems = getNumberOfItems();
+    setTotal(numberOfItems);
   }, [getNumberOfItems]);
   return (
     <div className="cart-widgets" onClick={handleOpen}>

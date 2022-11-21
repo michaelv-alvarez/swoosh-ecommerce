@@ -18,8 +18,8 @@ const ItemDetailContainer = () => {
   };
 
   useEffect(() => {
-    id && fetchProduct();
-  }, [id]);
+    fetchProduct();
+  }, []);
   return (
     <>
       {loading ? (

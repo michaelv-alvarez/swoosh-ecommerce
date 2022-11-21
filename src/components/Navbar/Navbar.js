@@ -21,7 +21,6 @@ const Navbar = () => {
 
   useEffect(() => {
     fetchCategories();
-    console.log("Get all categories effect");
   }, []);
   return (
     <nav className="header__nav">
