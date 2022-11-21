@@ -10,7 +10,8 @@ const Navbar = () => {
   const [categories, setCategories] = useState([]);
 
   const fetchCategories = async () => {
-    setCategories(await getCategories());
+    const data = await getCategories();
+    setCategories(data);
   };
   const handleOpen = () => {
     setOpen(!open);
@@ -21,6 +22,7 @@ const Navbar = () => {
 
   useEffect(() => {
     fetchCategories();
+    console.log("effect");
   }, [categories]);
   return (
     <nav className="header__nav">

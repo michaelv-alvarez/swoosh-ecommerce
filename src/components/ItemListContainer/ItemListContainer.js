@@ -27,7 +27,7 @@ const ItemListContainer = () => {
     // category ? fetchProductsByCategory(category) : fetchProducts();
     getAllProducts().then((data) => setItems(data));
     setLoading(false);
-    console.log("effect");
+    // console.log("effect");
   }, []);
 
   return <>{loading ? <Loader /> : <ItemList products={items} />}</>;
