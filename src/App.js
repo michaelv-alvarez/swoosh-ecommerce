@@ -5,6 +5,7 @@ import ItemDetailContainer from "./components/ItemDetailContainer/ItemDetailCont
 import ItemListContainer from "./components/ItemListContainer/ItemListContainer";
 import CartState from "./context/CartState";
 import About from "./pages/About/About";
+import Checkout from "./pages/Checkout/Checkout";
 import Home from "./pages/Home/Home";
 
 function App() {
@@ -13,6 +14,7 @@ function App() {
       <div className="app-container">
         <CartState>
           <Header />
+          <Cart />
           <Routes>
             <Route path="/" element={<Home />} />
 
@@ -25,6 +27,8 @@ function App() {
 
             <Route path="/item/detail/:id" element={<ItemDetailContainer />} />
 
+            <Route path="/cart/checkout" element={<Checkout />} />
+
             <Route path="/about" element={<About />} />
 
             <Route
@@ -32,7 +36,6 @@ function App() {
               element={<h1>Error 404 - Pagina no encontrada.</h1>}
             />
           </Routes>
-          <Cart />
         </CartState>
       </div>
     </>

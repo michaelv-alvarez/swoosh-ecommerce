@@ -21,7 +21,11 @@ const Item = ({ product, showAs }) => {
           </div>
 
           <div className="card__description">{product.description}</div>
-          <ItemCounter counter={itemCounter} setCounter={setItemCounter} />
+          <ItemCounter
+            counter={itemCounter}
+            setCounter={setItemCounter}
+            showAs="Cart"
+          />
           <button className="card__button" onClick={handleOnAdd}>
             ADD TO CART
           </button>
@@ -30,7 +34,25 @@ const Item = ({ product, showAs }) => {
     );
   }
   if (showAs === "CartItem") {
-    return <div>{product.title}</div>;
+    return (
+      <div className="cart__card card">
+        <div className="card__image">
+          <img src={product.image} alt={product.title} className="image" />
+        </div>
+
+        <div className="card__title">
+          {product.title}
+          <p className="card__category">
+            Category: <span>{product.category}</span>
+          </p>
+          <ItemCounter
+            counter={itemCounter}
+            setCounter={setItemCounter}
+            showAs="Cart"
+          />
+        </div>
+      </div>
+    );
   }
   return (
     <>

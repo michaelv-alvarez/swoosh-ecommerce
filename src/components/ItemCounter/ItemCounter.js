@@ -1,14 +1,32 @@
 import React from "react";
-import { useState } from "react";
 import { GoPlus, GoDash } from "react-icons/go";
-import useCartContext from "../../context/CartState";
-const counter = ({ counter, setCounter }) => {
+
+const counter = ({ counter, setCounter, showAs }) => {
   const handleLess = () => {
     counter > 0 && setCounter(counter - 1);
   };
   const handleAdd = () => {
     setCounter(counter + 1);
   };
+  if (showAs === "cart") {
+    return (
+      <div className="ItemCounter ItemCounter--cart">
+        <button
+          className="counter__btn counter__btn--cart"
+          onClick={handleLess}
+          disabled={counter === 1 ? true : false}
+        >
+          <GoDash />
+        </button>
+        <span className="counter__results counter__results--cart">
+          {counter}
+        </span>
+        <button className="counter__btn counter__btn--cart" onClick={handleAdd}>
+          <GoPlus />
+        </button>
+      </div>
+    );
+  }
   return (
     <div className="ItemCounter">
       <button

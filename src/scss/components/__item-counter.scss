@@ -2,10 +2,19 @@
     display: flex;
     align-items: center;
     gap: 1em;
+    &--cart{
+
+    }
     .counter__btn{
         padding: .5em 1em;
+        &--cart{
+        
+        }
     }
     .counter__results{
         font-family: $numbers;
+        &--cart{
+        
+        }
     }
 }

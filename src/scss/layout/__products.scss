@@ -117,3 +117,23 @@
         }
     }
 }
+
+.cart__card{
+    &.card{
+        display: flex;
+        .card__title{
+            .card__category{
+                color: #666;
+                text-transform: capitalize;
+                font: {
+                    size: .9em;
+                }
+            }
+        }
+        .card__image{
+            .image{
+                width: 75px;
+            }
+        }
+    }
+}
