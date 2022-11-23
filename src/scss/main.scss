@@ -5,7 +5,9 @@
 
 @import "./helpers/_extends";
 
+@import "./components/_item-counter.scss";
 @import "./components/_loader";
+
 @import  "./layout/_cart-offcanvas";
 @import "./layout/_header";
 @import "./layout/_cart-widgets";

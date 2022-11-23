@@ -1,5 +1,5 @@
 import React from "react";
-import { useCartContext } from "../../context/cart/CartState";
+import { useCartContext } from "../../context/CartState";
 import { MdOutlineClose } from "react-icons/md";
 import Item from "../Item/Item";
 

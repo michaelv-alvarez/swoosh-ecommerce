@@ -21,14 +21,14 @@ const CartState = ({ children }) => {
   const handleCloseCart = () => {
     setIsOpen(false);
   };
-  const handleAddItemToCart = (item) => {
+  const handleAddItemToCart = (item, quantity) => {
     const temp = [...items];
     const found = temp.find((product) => product.id === item.id);
 
     if (found) {
-      found.qty++;
+      found.qty += quantity;
     } else {
-      item.qty = 1;
+      item.qty = quantity;
       temp.push(item);
     }
     setItems([...temp]);

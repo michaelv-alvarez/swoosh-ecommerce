@@ -1,0 +1,11 @@
+.ItemCounter{
+    display: flex;
+    align-items: center;
+    gap: 1em;
+    .counter__btn{
+        padding: .5em 1em;
+    }
+    .counter__results{
+        font-family: $numbers;
+    }
+}
