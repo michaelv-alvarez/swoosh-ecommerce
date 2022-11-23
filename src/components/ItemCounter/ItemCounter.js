@@ -1,7 +1,8 @@
 import React from "react";
 import { GoPlus, GoDash } from "react-icons/go";
 
-const counter = ({ counter, setCounter, showAs }) => {
+const counter = ({ counter, setCounter, showAs, productId }) => {
+  console.log(productId);
   const handleLess = () => {
     counter > 0 && setCounter(counter - 1);
   };

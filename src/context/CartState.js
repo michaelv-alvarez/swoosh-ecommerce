@@ -37,6 +37,14 @@ const CartState = ({ children }) => {
     const total = items.length;
     return total;
   };
+  const handleUpdateCartItem = (id, quantity) => {
+    const temp = [...items];
+    const found = temp.find((product) => product.id === id);
+    if (found) {
+      found.qty = quantity;
+    }
+    setItems([...temp]);
+  };
   return (
     <CartContext.Provider
       value={{

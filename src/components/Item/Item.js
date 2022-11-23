@@ -24,7 +24,7 @@ const Item = ({ product, showAs }) => {
           <ItemCounter
             counter={itemCounter}
             setCounter={setItemCounter}
-            showAs="Cart"
+            productId={product.id}
           />
           <button className="card__button" onClick={handleOnAdd}>
             ADD TO CART
