@@ -13,7 +13,6 @@ function App() {
     <>
       <div className="app-container">
         <CartState>
-          <Header />
           <Cart />
           <Routes>
             <Route path="/" element={<Home />} />
@@ -27,7 +26,7 @@ function App() {
 
             <Route path="/item/detail/:id" element={<ItemDetailContainer />} />
 
-            <Route path="/cart/checkout" element={<Checkout />} />
+            <Route path="/checkout" element={<Checkout />} />
 
             <Route path="/about" element={<About />} />
 

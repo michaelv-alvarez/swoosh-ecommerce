@@ -5,7 +5,7 @@ import { useParams } from "react-router-dom";
 import { getProductById } from "../../utils/firebaseFetching";
 import Item from "../Item/Item";
 import Loader from "../Loader/Loader";
-
+import Header from "../Header/Header";
 const ItemDetailContainer = () => {
   const { id } = useParams();
   const [loading, setLoading] = useState(true);
@@ -22,6 +22,7 @@ const ItemDetailContainer = () => {
   }, []);
   return (
     <>
+      <Header showAs="Shadow" />
       {loading ? (
         <Loader />
       ) : (

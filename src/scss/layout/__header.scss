@@ -6,23 +6,24 @@
     position: relative;
     background: #f1c40f;
     border-bottom: 1px solid #f5d450;
-    
-    &--shadow{
+
+    &--shadow {
         box-shadow: 0px 2px 4px 0px rgb(0 0 0 / 12%);
+        // box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
     }
     &__logo {
         width: 80px;
         position: absolute;
         left: 2rem;
     }
-    
+
     &__nav {
         display: flex;
         align-items: center;
         gap: 10px;
         position: relative;
         padding: 1rem 0;
-        
+
         .nav__link {
             background: none;
             border: none;
@@ -37,7 +38,7 @@
             position: relative;
             cursor: pointer;
             transition: all 0.3s ease-in;
-            
+
             &:after {
                 position: absolute;
                 content: "";
@@ -50,46 +51,46 @@
                 transform: scaleX(0);
                 transform-origin: right;
             }
-            &:hover:after{
+            &:hover:after {
                 transform: scaleX(1);
                 transform-origin: left;
             }
-            &--category{
+            &--category {
                 margin: 0;
                 border-radius: 0;
                 padding: 8px 16px;
-                &:after{
+                &:after {
                     content: "";
                     background: none;
                 }
-                &:hover{
+                &:hover {
                     background: #ee4848;
                 }
             }
-            &.active{
-                &:after{
-                position: absolute;
-                content: "";
-                height: 3px;
-                width: 100%;
-                top: 100%;
-                left: 0;
-                background: #ee4848;
-                transition: transform 0.5s;
-                transform: scaleX(1);
-                transform-origin: right;
+            &.active {
+                &:after {
+                    position: absolute;
+                    content: "";
+                    height: 3px;
+                    width: 100%;
+                    top: 100%;
+                    left: 0;
+                    background: #ee4848;
+                    transition: transform 0.5s;
+                    transform: scaleX(1);
+                    transform-origin: right;
                 }
             }
         }
-        
+
         .nav__logo {
             width: 150px;
             margin: 0 4rem;
         }
-        .dropdown-menu{
+        .dropdown-menu {
             z-index: 500;
             position: relative;
-            .dropdown-menu__categories{
+            .dropdown-menu__categories {
                 background: #f1c40f;
                 min-width: max-content;
                 left: 16px;
@@ -100,20 +101,16 @@
                 border-radius: 5px;
                 // padding: 10px 0;
                 box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-                transition: display .5s ease-in;
-                
+                transition: display 0.5s ease-in;
             }
-            .active{
+            .active {
                 opacity: 1;
                 visibility: visible;
             }
-            .inactive{
+            .inactive {
                 opacity: 0;
-                visibility:hidden;
+                visibility: hidden;
             }
         }
     }
 }
-
-
-

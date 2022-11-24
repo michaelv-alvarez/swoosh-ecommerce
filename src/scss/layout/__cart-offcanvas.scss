@@ -25,6 +25,10 @@
         flex-direction: column;
         align-items: center;
         justify-content: center;
+        .cart__go{
+            text-decoration: underline;
+            color: #5C3551;
+        }
     }
     &__content {
         width: 100%;
@@ -40,12 +44,13 @@
             gap: 1em;
         }
         .cart__cta {
+            display: block;
             margin-top: 3em;
-            border: none;
             background: #5C3551;
             border-radius: 2em;
             width: 100%;
             color: white;
+            text-align: center;
             padding: 20px 37px;
             cursor: pointer;
             font : {

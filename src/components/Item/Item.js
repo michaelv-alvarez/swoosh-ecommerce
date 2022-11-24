@@ -3,12 +3,32 @@ import { Link } from "react-router-dom";
 import { useCartContext } from "../../context/CartState";
 import ItemCounter from "../ItemCounter/ItemCounter";
 import { GoTrashcan } from "react-icons/go";
+import Swal from "sweetalert2";
+import withReactContent from "sweetalert2-react-content";
 
 const Item = ({ product, showAs }) => {
   const [itemCounter, setItemCounter] = useState(1);
-  const { addItemToCart, openCart, deleteCartItem } = useCartContext();
+  const { addItemToCart, openCart, deleteCartItem, closeCart } =
+    useCartContext();
+  const deleteModal = withReactContent(Swal);
   const handleDelete = () => {
-    deleteCartItem(product.id);
+    deleteModal
+      .fire({
+        title: <strong>¿Are you sure?</strong>,
+        showDenyButton: true,
+        confirmButtonText: "Yes",
+        denyButtonText: `Cancel`,
+        icon: "warning",
+      })
+      .then((result) => {
+        if (result.isConfirmed) {
+          deleteCartItem(product.id);
+          Swal.fire("Deleted!", "", "success");
+          closeCart();
+        } else if (result.isDenied) {
+          return;
+        }
+      });
   };
   const handleOnAdd = () => {
     addItemToCart(product, itemCounter);

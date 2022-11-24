@@ -4,6 +4,7 @@ import { MdOutlineClose } from "react-icons/md";
 import Item from "../Item/Item";
 import Divider from "../Divider/Divider";
 import Overlay from "../Overlay/Overlay";
+import { Link } from "react-router-dom";
 
 const Cart = () => {
   const { isOpen, closeCart, items } = useCartContext();
@@ -18,6 +19,9 @@ const Cart = () => {
         {items.length === 0 ? (
           <div className="cart__empty">
             <h3 className="empty">Your cart is empty</h3>
+            <Link to="/shop" className="cart__go" onClick={handleClose}>
+              Go to store
+            </Link>
           </div>
         ) : (
           <div className="cart__content">
@@ -40,7 +44,9 @@ const Cart = () => {
               <h4>Total</h4>
               <span>US$112</span>
             </div>
-            <button className="cart__cta">Checkout</button>
+            <Link to="/checkout" className="cart__cta" onClick={handleClose}>
+              Checkout
+            </Link>
           </div>
         )}
       </div>
