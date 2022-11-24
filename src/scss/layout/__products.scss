@@ -120,19 +120,50 @@
 
 .cart__card{
     &.card{
+        position: relative;
         display: flex;
-        .card__title{
+        gap: 1em;
+        align-items: center;
+        .card__desc{
+            display: flex;
+            flex-direction: column;
+            gap: .2em;
+            .card__title{
+                font: {
+                    size: 14px
+                };
+            }
             .card__category{
                 color: #666;
                 text-transform: capitalize;
                 font: {
-                    size: .9em;
-                }
+                    size: 12px
+                };
             }
         }
         .card__image{
             .image{
                 width: 75px;
+            }
+        }
+        .card__price{
+            .price{
+                font: {
+                    weight: bold;
+                    family: $numbers;
+                };
+            }
+        }
+        .card__actions{
+            position: absolute;
+            right: 1em;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            .delete{
+                height: 1.5em;
+                cursor: pointer;
             }
         }
     }

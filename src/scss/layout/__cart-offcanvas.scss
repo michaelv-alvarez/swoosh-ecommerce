@@ -9,10 +9,10 @@
     overflow-x: hidden;
     transition: 0.3s ease-out;
     white-space: nowrap;
-    &.show{
+    &.show {
         width: 500px;
     }
-    &__close{
+    &__close {
         width: 30px;
         height: 30px;
         margin: 5px;
@@ -26,12 +26,32 @@
         align-items: center;
         justify-content: center;
     }
-    &__content{
+    &__content {
         width: 100%;
         padding: 1em;
-        .cart__title{
+        .cart__title {
             font: {
-                size: 1.5em
+                size: 1.5em;
+            }
+        }
+        .cart__items {
+            display: flex;
+            flex-direction: column;
+            gap: 1em;
+        }
+        .cart__cta {
+            margin-top: 3em;
+            border: none;
+            background: #5C3551;
+            border-radius: 2em;
+            width: 100%;
+            color: white;
+            padding: 20px 37px;
+            cursor: pointer;
+            font : {
+                family: $secondary;
+                weight: 600;
+                size: 1rem;
             }
         }
     }

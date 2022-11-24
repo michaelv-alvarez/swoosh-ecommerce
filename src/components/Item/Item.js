@@ -2,11 +2,15 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { useCartContext } from "../../context/CartState";
 import ItemCounter from "../ItemCounter/ItemCounter";
+import { GoTrashcan } from "react-icons/go";
+
 const Item = ({ product, showAs }) => {
   const [itemCounter, setItemCounter] = useState(1);
-  const { addItemToCart } = useCartContext();
+  const { addItemToCart, openCart } = useCartContext();
+
   const handleOnAdd = () => {
     addItemToCart(product, itemCounter);
+    openCart();
   };
   if (showAs === "Detail") {
     return (
@@ -21,11 +25,7 @@ const Item = ({ product, showAs }) => {
           </div>
 
           <div className="card__description">{product.description}</div>
-          <ItemCounter
-            counter={itemCounter}
-            setCounter={setItemCounter}
-            productId={product.id}
-          />
+          <ItemCounter counter={itemCounter} setCounter={setItemCounter} />
           <button className="card__button" onClick={handleOnAdd}>
             ADD TO CART
           </button>
@@ -40,16 +40,24 @@ const Item = ({ product, showAs }) => {
           <img src={product.image} alt={product.title} className="image" />
         </div>
 
-        <div className="card__title">
-          {product.title}
+        <div className="card__desc">
+          <p className="card__title">{product.title}</p>
           <p className="card__category">
             Category: <span>{product.category}</span>
           </p>
+          <div className="card__price">
+            <span className="price">US${product.price}</span>
+          </div>
+
           <ItemCounter
-            counter={itemCounter}
-            setCounter={setItemCounter}
             showAs="Cart"
+            productId={product.id}
+            productQty={product.qty}
           />
+        </div>
+
+        <div className="card__actions">
+          <GoTrashcan className="delete" />
         </div>
       </div>
     );

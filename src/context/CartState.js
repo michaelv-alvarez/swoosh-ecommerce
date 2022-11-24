@@ -8,14 +8,14 @@ const initialState = {
   getNumberOfItems: () => {},
   openCart: () => {},
   closeCart: () => {},
-  emptyCart: () => {},
+  updateCart: () => {},
 };
 const CartContext = createContext(initialState);
 
 const CartState = ({ children }) => {
   const [items, setItems] = useState([]);
   const [isOpen, setIsOpen] = useState(false);
-  const hanldeOpenCart = () => {
+  const handleOpenCart = () => {
     setIsOpen(true);
   };
   const handleCloseCart = () => {
@@ -23,6 +23,7 @@ const CartState = ({ children }) => {
   };
   const handleAddItemToCart = (item, quantity) => {
     const temp = [...items];
+
     const found = temp.find((product) => product.id === item.id);
 
     if (found) {
@@ -40,6 +41,7 @@ const CartState = ({ children }) => {
   const handleUpdateCartItem = (id, quantity) => {
     const temp = [...items];
     const found = temp.find((product) => product.id === id);
+
     if (found) {
       found.qty = quantity;
     }
@@ -52,8 +54,9 @@ const CartState = ({ children }) => {
         isOpen,
         addItemToCart: handleAddItemToCart,
         getNumberOfItems: handleNumberOfItems,
-        openCart: hanldeOpenCart,
+        openCart: handleOpenCart,
         closeCart: handleCloseCart,
+        updateCart: handleUpdateCartItem,
       }}
     >
       {children}

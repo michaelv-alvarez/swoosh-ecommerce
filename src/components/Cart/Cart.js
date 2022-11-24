@@ -39,6 +39,7 @@ const Cart = () => {
               <h4>Total</h4>
               <span>US$112</span>
             </div>
+            <button className="cart__cta">Checkout</button>
           </div>
         )}
       </div>
