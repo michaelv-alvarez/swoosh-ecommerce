@@ -15,6 +15,10 @@ const ItemCounter = ({
     setCartCounter(cartCounter + 1);
     updateCart(productId, cartCounter + 1);
   };
+  const handleCartLess = () => {
+    setCartCounter(cartCounter - 1);
+    updateCart(productId, cartCounter - 1);
+  };
   const handleLess = () => {
     counter > 0 && setCounter(counter - 1);
   };
@@ -26,7 +30,7 @@ const ItemCounter = ({
       <div className="ItemCounter ItemCounter--cart">
         <button
           className="counter__btn counter__btn--cart"
-          onClick={handleLess}
+          onClick={handleCartLess}
           disabled={cartCounter === 1 ? true : false}
         >
           <GoDash />

@@ -10,6 +10,7 @@ const Cart = () => {
   const handleClose = () => {
     closeCart();
   };
+
   return (
     <Overlay show={isOpen}>
       <div className={isOpen ? "cart show" : "cart"}>

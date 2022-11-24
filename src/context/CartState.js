@@ -9,6 +9,7 @@ const initialState = {
   openCart: () => {},
   closeCart: () => {},
   updateCart: () => {},
+  deleteCartItem: () => {},
 };
 const CartContext = createContext(initialState);
 
@@ -38,7 +39,16 @@ const CartState = ({ children }) => {
     const total = items.length;
     return total;
   };
-  const handleUpdateCartItem = (id, quantity) => {
+  const handleDeleteCartItem = (id) => {
+    const temp = [...items];
+    const found = temp.find((product) => product.id === id);
+    const index = temp.indexOf(found);
+    if (found) {
+      temp.splice(index, 1);
+    }
+    setItems([...temp]);
+  };
+  const handleUpdateCartItemQty = (id, quantity) => {
     const temp = [...items];
     const found = temp.find((product) => product.id === id);
 
@@ -56,7 +66,8 @@ const CartState = ({ children }) => {
         getNumberOfItems: handleNumberOfItems,
         openCart: handleOpenCart,
         closeCart: handleCloseCart,
-        updateCart: handleUpdateCartItem,
+        updateCart: handleUpdateCartItemQty,
+        deleteCartItem: handleDeleteCartItem,
       }}
     >
       {children}

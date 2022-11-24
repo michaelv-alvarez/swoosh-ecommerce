@@ -6,8 +6,10 @@ import { GoTrashcan } from "react-icons/go";
 
 const Item = ({ product, showAs }) => {
   const [itemCounter, setItemCounter] = useState(1);
-  const { addItemToCart, openCart } = useCartContext();
-
+  const { addItemToCart, openCart, deleteCartItem } = useCartContext();
+  const handleDelete = () => {
+    deleteCartItem(product.id);
+  };
   const handleOnAdd = () => {
     addItemToCart(product, itemCounter);
     openCart();
@@ -27,7 +29,7 @@ const Item = ({ product, showAs }) => {
           <div className="card__description">{product.description}</div>
           <ItemCounter counter={itemCounter} setCounter={setItemCounter} />
           <button className="card__button" onClick={handleOnAdd}>
-            ADD TO CART
+            Add to cart
           </button>
         </div>
       </div>
@@ -57,7 +59,7 @@ const Item = ({ product, showAs }) => {
         </div>
 
         <div className="card__actions">
-          <GoTrashcan className="delete" />
+          <GoTrashcan className="delete" onClick={handleDelete} />
         </div>
       </div>
     );
