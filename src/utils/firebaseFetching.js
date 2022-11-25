@@ -1,3 +1,4 @@
+import { async } from "@firebase/util";
 import {
   collection,
   doc,
@@ -5,11 +6,13 @@ import {
   getDocs,
   where,
   query,
+  addDoc,
 } from "firebase/firestore";
 import { db } from "../firebase";
 
 const productsCollection = collection(db, "products");
 const categoriesCollection = collection(db, "categories");
+const ordersCollection = collection(db, "orders");
 export const getAllProducts = async () => {
   try {
     const request = getDocs(productsCollection);
@@ -57,4 +60,14 @@ export const getCategories = async () => {
   } catch (error) {
     console.log(error);
   }
+};
+
+export const addNewOrder = (order) => {
+  const request = addDoc(ordersCollection, order);
+  request.then((docRef) => {
+    console.log(docRef);
+  });
+  // const response = await request;
+  // const orderId = response.id;
+  // return orderId;
 };

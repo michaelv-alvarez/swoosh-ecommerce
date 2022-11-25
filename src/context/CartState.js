@@ -28,9 +28,9 @@ const CartState = ({ children }) => {
     const found = temp.find((product) => product.id === item.id);
 
     if (found) {
-      found.qty += quantity;
+      found.quantity += quantity;
     } else {
-      item.qty = quantity;
+      item.quantity = quantity;
       temp.push(item);
     }
     setItems([...temp]);
@@ -53,7 +53,7 @@ const CartState = ({ children }) => {
     const found = temp.find((product) => product.id === id);
 
     if (found) {
-      found.qty = quantity;
+      found.quantity = quantity;
     }
     setItems([...temp]);
   };
