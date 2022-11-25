@@ -1,5 +1,4 @@
 import React, { useRef } from "react";
-import { useState } from "react";
 import { addNewOrder } from "../../utils/firebaseFetching";
 import { useCartContext } from "../../context/CartState";
 import { serverTimestamp } from "firebase/firestore";
