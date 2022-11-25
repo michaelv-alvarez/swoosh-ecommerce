@@ -74,7 +74,7 @@ const Item = ({ product, showAs }) => {
           <ItemCounter
             showAs="Cart"
             productId={product.id}
-            productQty={product.qty}
+            productQty={product.quantity}
           />
         </div>
 
