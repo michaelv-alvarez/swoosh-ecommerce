@@ -10,7 +10,9 @@ const Checkout = () => {
   return (
     <div className="checkout">
       <h1 className="checkout__title">Checkout</h1>
-      <CheckoutForm />
+      <div className="checkout__form">
+        <CheckoutForm />
+      </div>
     </div>
   );
 };

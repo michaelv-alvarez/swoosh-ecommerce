@@ -5,17 +5,20 @@
 
 @import "./helpers/_extends";
 
-@import "./components/_item-counter.scss";
+@import "./components/_item-counter";
 @import "./components/_loader";
+@import "./components/_text-field";
+@import "./components/_checkout-form";
 
-@import "./layout/_header";
 @import './layout/_overlay';
+@import "./layout/_header";
+@import "./layout/_divider";
 @import "./layout/_cart-widgets";
 @import "./layout/_cart-offcanvas";
-@import "./layout/_divider";
 @import "./layout/_products";
 
 @import "./pages/_home";
+@import "./pages/_checkout";
 
 
 

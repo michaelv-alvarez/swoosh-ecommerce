@@ -31,12 +31,14 @@ const CheckoutForm = () => {
         validationSchema={validate}
       >
         {(formik) => (
-          <Form>
+          <Form className="checkoutForm">
             <TextField label="First name" name="firstName" type="text" />
             <TextField label="Last name" name="lastName" type="text" />
             <TextField label="Email" name="email" type="email" />
             <TextField label="Confirm Email" name="confirmEmail" type="email" />
-            <button type="submit">Complete purchase</button>
+            <button type="submit" className="checkoutForm__submit">
+              Complete purchase
+            </button>
           </Form>
         )}
       </Formik>
