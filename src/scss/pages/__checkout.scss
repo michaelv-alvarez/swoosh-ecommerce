@@ -1,6 +1,24 @@
-.checkout{
-    .checkout__form{
-        padding: 1em;
-        width: 550px;
+.checkout {
+    background-color: white;
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: space-between;
+    .contact {
+        padding: 2em;
+        display: grid;
+        &__title{
+            text-align: center;
+            margin-bottom: 1em;
+        }
+        &__information {
+            padding: 1em;
+            width: 800px;
+        }
+    }
+    .summary{
+        width: 900px;
+        border: 1px solid red;
     }
 }

@@ -1,24 +1,46 @@
 .field{
+    flex: 1;
     display: flex;
     flex-direction: column;
+    gap: .3em;
     &__input{
-        // position: relative;
+        position: relative;
+        font: {
+            size: 1em ;
+            family: $primary;
+        };
         padding: 1em;
         outline: none;
         border-radius: 5px;
         border: 1px solid #c4c4c4;
         color: #c4c4c4;
-        &--is-invalid{
-            border: 1px solid red;
-        }
         &:focus{
+            // box-shadow: shadowNoErrors;    
             color: black;
         }
+        &--is-invalid{
+            box-shadow: $shadowErrors;
+            &:focus{
+                box-shadow: $shadowErrors;
+            }
+            &:after{
+                content: "";
+                position: absolute;
+            }
+        }
+        
+    }
+    &__label{
+        font: {
+            size: 1.2em;
+            family: $primary;
+        };
     }
     &__error{
-        // position: absolute;
-        margin-top: .5em;
-        color: red;
-        font-size: .7em;
+        color: #F24236;
+        font: {
+            size: .9em;
+            family: $secondary;
+        }
     }
 }
