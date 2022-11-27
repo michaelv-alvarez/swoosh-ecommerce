@@ -1,53 +1,21 @@
 
 <a name="readme-top"></a>
 
-[![LinkedIn][linkedin-shield]][linkedin-url]
-
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
   <a href="link-de-la-app">
-    <img src="https://res.cloudinary.com/dtpfo51rx/image/upload/v1669562382/swoosh/logos/logo_oqhbhu.png" alt="Logo" width="80" height="80">
+    <img src="https://res.cloudinary.com/dtpfo51rx/image/upload/v1669562382/swoosh/logos/logo_oqhbhu.png" alt="Logo" width="100" height="100">
   </a>
 
-  <h3 align="center">Swoosh - Vintage store</h3>
+  <h1 align="center">Swoosh - Vintage store</h1>
 
 </div>
 
-
-
-<!-- TABLE OF CONTENTS -->
-<details>
-  <summary>Tabla de contenido</summary>
-  <ol>
-    <li>
-      <a href="#about-the-project">Acerca del proyecto</a>
-      <ul>
-        <li><a href="#built-with">Realizado con</a></li>
-      </ul>
-    </li>
-    <li>
-      <a href="#getting-started">Cómo comenzar</a>
-      <ul>
-        <li><a href="#prerequisites">Requisitos minimos</a></li>
-        <li><a href="#installation">Instalación</a></li>
-      </ul>
-    </li>
-    <li><a href="#usage">Usage</a></li>
-    <li><a href="#roadmap">Roadmap</a></li>
-    <li><a href="#contributing">Contributing</a></li>
-    <li><a href="#license">License</a></li>
-    <li><a href="#contact">Contact</a></li>
-    <li><a href="#acknowledgments">Acknowledgments</a></li>
-  </ol>
-</details>
-
-
-
 <!-- ABOUT THE PROJECT -->
-## Acerca del proyecto
-
 [![Product Name Screen Shot][product-screenshot]](link-a-la-app )
+
+## Acerca del proyecto
 
 Hola coders! , mi nombre es Michael Alvarez soy Desarrolador Web y quiero presentarles esta aplicacion de e-commerce que realize como proyecto final para el curso de ReactJS en la plataforma Coderhouse.
 
