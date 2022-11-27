@@ -4,13 +4,13 @@ import React from "react";
 const initialState = {
   items: [],
   isOpen: false,
-  orderId: "",
   addItemToCart: () => {},
   getNumberOfItems: () => {},
   openCart: () => {},
   closeCart: () => {},
   updateCart: () => {},
   deleteCartItem: () => {},
+  emptyCart: () => {},
 };
 const CartContext = createContext(initialState);
 
@@ -58,6 +58,9 @@ const CartState = ({ children }) => {
     }
     setItems([...temp]);
   };
+  const handleEmptyCart = () => {
+    setItems([]);
+  };
   return (
     <CartContext.Provider
       value={{
@@ -69,6 +72,7 @@ const CartState = ({ children }) => {
         closeCart: handleCloseCart,
         updateCart: handleUpdateCartItemQty,
         deleteCartItem: handleDeleteCartItem,
+        emptyCart: handleEmptyCart,
       }}
     >
       {children}

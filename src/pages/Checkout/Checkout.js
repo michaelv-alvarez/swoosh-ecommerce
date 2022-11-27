@@ -6,6 +6,7 @@ import Item from "../../components/Item/Item";
 import { useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 import withReactContent from "sweetalert2-react-content";
+import Order from "../Order/Order";
 const Checkout = () => {
   const { items } = useCartContext();
   const navigate = useNavigate();
@@ -36,11 +37,7 @@ const Checkout = () => {
         }
       });
   } else if (orderId) {
-    return (
-      <div>
-        Su orden de compra es: <h1>{orderId}</h1>
-      </div>
-    );
+    return <Order orderID={orderId} />;
   } else {
     return (
       <div className="purchase__container">

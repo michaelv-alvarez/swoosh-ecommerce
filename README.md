@@ -47,7 +47,7 @@
 <!-- ABOUT THE PROJECT -->
 ## Acerca del proyecto
 
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
+[![Product Name Screen Shot][product-screenshot]](link-a-la-app )
 
 Hola coders! , mi nombre es Michael Alvarez soy Desarrolador Web y quiero presentarles esta aplicacion de e-commerce que realize como proyecto final para el curso de ReactJS en la plataforma Coderhouse.
 
