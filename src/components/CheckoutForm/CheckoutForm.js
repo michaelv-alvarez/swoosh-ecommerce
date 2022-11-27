@@ -12,6 +12,7 @@ const CheckoutForm = () => {
       purcharse_data: {
         firsName: values.firstName,
         lastName: values.lastName,
+        email: values.email.toLowerCase(),
       },
       products: items,
       date: serverTimestamp(),
@@ -32,7 +33,6 @@ const CheckoutForm = () => {
       .email("Email is invalid", emailRegEx)
       .required("Email is required"),
     confirmEmail: Yup.string()
-      .max(15, "Email is invalid")
       .oneOf([Yup.ref("email"), null], "Email must match")
       .required("Confirm email is required"),
   });
@@ -69,7 +69,14 @@ const CheckoutForm = () => {
             </div>
             <TextField label="Email" name="email" type="text" />
             <TextField label="Confirm Email" name="confirmEmail" type="text" />
-            <button type="submit" className="form__submit">
+            <button
+              type="submit"
+              className={
+                items.length === 0
+                  ? "form__submit form__submit--disabled"
+                  : "form__submit"
+              }
+            >
               Complete purchase
             </button>
           </Form>

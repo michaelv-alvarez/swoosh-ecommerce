@@ -8,9 +8,11 @@ import withReactContent from "sweetalert2-react-content";
 
 const Item = ({ product, showAs }) => {
   const [itemCounter, setItemCounter] = useState(1);
-  const { addItemToCart, openCart, deleteCartItem, closeCart } =
-    useCartContext();
+
+  const { addItemToCart, openCart, deleteCartItem } = useCartContext();
+
   const deleteModal = withReactContent(Swal);
+
   const handleDelete = () => {
     deleteModal
       .fire({
@@ -23,17 +25,17 @@ const Item = ({ product, showAs }) => {
       .then((result) => {
         if (result.isConfirmed) {
           deleteCartItem(product.id);
-          Swal.fire("Deleted!", "", "success");
-          closeCart();
         } else if (result.isDenied) {
           return;
         }
       });
   };
+
   const handleOnAdd = () => {
     addItemToCart(product, itemCounter);
     openCart();
   };
+
   if (showAs === "Detail") {
     return (
       <div className="detail__card card">

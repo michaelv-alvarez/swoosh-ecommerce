@@ -15,7 +15,6 @@
         border: 1px solid #c4c4c4;
         color: #c4c4c4;
         &:focus{
-            // box-shadow: shadowNoErrors;    
             color: black;
         }
         &--is-invalid{
@@ -32,7 +31,7 @@
     }
     &__label{
         font: {
-            size: 1.2em;
+            size: 1em;
             family: $primary;
         };
     }

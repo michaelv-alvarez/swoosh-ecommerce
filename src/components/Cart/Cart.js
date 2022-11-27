@@ -8,6 +8,12 @@ import { Link } from "react-router-dom";
 
 const Cart = () => {
   const { isOpen, closeCart, items } = useCartContext();
+
+  let subTotal = 0;
+  const handleCalcSubTotal = (qty, price) => {
+    let itemSubTotal = qty * price;
+    subTotal += itemSubTotal;
+  };
   const handleClose = () => {
     closeCart();
   };
@@ -29,6 +35,7 @@ const Cart = () => {
             <Divider isCart={true} />
             <div className="cart__items">
               {items.map((product) => {
+                handleCalcSubTotal(product.quantity, product.price);
                 return (
                   <Item showAs="CartItem" product={product} key={product.id} />
                 );
@@ -37,12 +44,12 @@ const Cart = () => {
             <Divider isCart={true} />
             <div className="flex-row cart__subtotal">
               <h4>Subtotal</h4>
-              <span>US$96</span>
+              <span>US${subTotal}</span>
             </div>
             <Divider isCart={true} />
             <div className="flex-row cart__total">
               <h4>Total</h4>
-              <span>US$112</span>
+              <span>US${subTotal}</span>
             </div>
             <Link to="/checkout" className="cart__cta" onClick={handleClose}>
               Checkout
