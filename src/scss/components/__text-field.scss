@@ -13,9 +13,9 @@
         outline: none;
         border-radius: 5px;
         border: 1px solid #c4c4c4;
-        color: #c4c4c4;
-        &:focus{
-            color: black;
+        color: black;
+        &::placeholder{
+            color: #c4c4c4;
         }
         &--is-invalid{
             box-shadow: $shadowErrors;

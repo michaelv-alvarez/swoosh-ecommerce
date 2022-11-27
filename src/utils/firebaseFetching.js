@@ -12,6 +12,7 @@ import { db } from "../firebase";
 const productsCollection = collection(db, "products");
 const categoriesCollection = collection(db, "categories");
 const ordersCollection = collection(db, "orders");
+
 export const getAllProducts = async () => {
   try {
     const request = getDocs(productsCollection);
@@ -61,12 +62,9 @@ export const getCategories = async () => {
   }
 };
 
-export const addNewOrder = (order) => {
+export const addNewOrder = async (order) => {
   const request = addDoc(ordersCollection, order);
-  request.then((docRef) => {
-    console.log(docRef);
-  });
-  // const response = await request;
-  // const orderId = response.id;
-  // return orderId;
+  const response = await request;
+  const orderID = response.id;
+  return orderID;
 };

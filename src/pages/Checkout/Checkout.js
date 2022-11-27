@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useCartContext } from "../../context/CartState";
 import CheckoutForm from "../../components/CheckoutForm/CheckoutForm";
 import Divider from "../../components/Divider/Divider";
@@ -10,6 +10,7 @@ const Checkout = () => {
   const { items } = useCartContext();
   const navigate = useNavigate();
   const navigateModal = withReactContent(Swal);
+  const [orderId, setOrderId] = useState("");
 
   let subTotal = 0;
 
@@ -20,8 +21,8 @@ const Checkout = () => {
 
   const mainLogo =
     "https://res.cloudinary.com/dtpfo51rx/image/upload/v1669562382/swoosh/logos/logo_oqhbhu.png";
+
   if (items.length === 0) {
-    // navigate("/shop");
     navigateModal
       .fire({
         title: <strong>Sorry, there are no products</strong>,
@@ -34,6 +35,12 @@ const Checkout = () => {
           navigate("/shop");
         }
       });
+  } else if (orderId) {
+    return (
+      <div>
+        Su orden de compra es: <h1>{orderId}</h1>
+      </div>
+    );
   } else {
     return (
       <div className="purchase__container">
@@ -43,8 +50,8 @@ const Checkout = () => {
           </div>
           <div className="contact">
             <div className="contact__information">
-              <h1 className="contact__title">Contact information</h1>
-              <CheckoutForm />
+              <h1 className="contact__title">Complete contact information</h1>
+              <CheckoutForm id={orderId} setId={setOrderId} />
             </div>
           </div>
         </div>

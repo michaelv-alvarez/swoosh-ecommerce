@@ -4,6 +4,7 @@ import React from "react";
 const initialState = {
   items: [],
   isOpen: false,
+  orderId: "",
   addItemToCart: () => {},
   getNumberOfItems: () => {},
   openCart: () => {},

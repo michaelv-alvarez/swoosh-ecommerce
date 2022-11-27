@@ -4,10 +4,15 @@ import { useCartContext } from "../../context/CartState";
 import { serverTimestamp } from "firebase/firestore";
 import TextField from "./TextField";
 import * as Yup from "yup";
+import { useState } from "react";
+import ButtonLoader from "../Loader/ButtonLoader";
 
-const CheckoutForm = () => {
+const CheckoutForm = ({ setId }) => {
   const { items } = useCartContext();
-  const handleSubmit = (values) => {
+  const [loading, setLoading] = useState(false);
+
+  const handleSubmit = async (values, resetForm) => {
+    setLoading(true);
     const order = {
       purcharse_data: {
         firsName: values.firstName,
@@ -17,7 +22,10 @@ const CheckoutForm = () => {
       products: items,
       date: serverTimestamp(),
     };
-    addNewOrder(order);
+    const orderId = await addNewOrder(order);
+    setId(orderId);
+    resetForm({ values: "" });
+    setLoading(false);
   };
   const emailRegEx =
     /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/g;
@@ -47,8 +55,7 @@ const CheckoutForm = () => {
         }}
         validationSchema={validate}
         onSubmit={(values, { resetForm }) => {
-          handleSubmit(values);
-          resetForm({ values: "" });
+          handleSubmit(values, resetForm);
         }}
       >
         {(formik) => (
@@ -69,15 +76,8 @@ const CheckoutForm = () => {
             </div>
             <TextField label="Email" name="email" type="text" />
             <TextField label="Confirm Email" name="confirmEmail" type="text" />
-            <button
-              type="submit"
-              className={
-                items.length === 0
-                  ? "form__submit form__submit--disabled"
-                  : "form__submit"
-              }
-            >
-              Complete purchase
+            <button type="submit" className="form__submit">
+              {loading ? <ButtonLoader /> : "Complete purchase"}
             </button>
           </Form>
         )}
