@@ -13,7 +13,7 @@
 </div>
 
 <!-- ABOUT THE PROJECT -->
-[![Product Name Screen Shot][product-screenshot]](link-a-la-app )
+[![Product Name Screen Shot][product-screenshot]](https://swoosh-ecommerce.vercel.app/)
 
 ## Acerca del proyecto
 
@@ -86,8 +86,9 @@ _Los pasos a seguir para realizar la instalacion correcta del proyecto._
 
 <!-- USAGE EXAMPLES -->
 ## Usabilidad
+* Haciendo click sobre la imagen te redireccionara a un pequeño video demo de la aplicacion.
 
-[![Funcionamiento de la aplicacion](https://res.cloudinary.com/dtpfo51rx/image/upload/v1669582969/swoosh/screenshots/React-App_z2omys.png)](https://www.youtube.com/watch?v=LTHNZ8RZipU)
+[![Funcionamiento de la aplicacion](https://res.cloudinary.com/dtpfo51rx/image/upload/v1669595147/swoosh/screenshots/miniatura_uikpmb.png)](https://www.youtube.com/watch?v=LTHNZ8RZipU)
 
 <p align="right">(<a href="#readme-top">volver al inicio</a>)</p>
 
@@ -98,7 +99,9 @@ Linkedin - [https://www.linkedin.com/in/michael-alvarez-7b0539242/](https://www.
 
 Github - [https://github.com/michaelv-alvarez](https://github.com/michaelv-alvarez)
 
-Link del proyecto: [https://github.com/michaelv-alvarez/swoosh-ecommerce](https://github.com/michaelv-alvarez/swoosh-ecommerce)
+Link del repositorio: [https://github.com/michaelv-alvarez/swoosh-ecommerce](https://github.com/michaelv-alvarez/swoosh-ecommerce)
+
+Link de la app: [https://swoosh-ecommerce.vercel.app/](https://swoosh-ecommerce.vercel.app/)
 
 Instagram - [https://www.instagram.com/micha.alvz/](https://www.instagram.com/micha.alvz/)
 
@@ -115,8 +118,6 @@ Instagram - [https://www.instagram.com/micha.alvz/](https://www.instagram.com/mi
 * [React Icons](https://react-icons.github.io/react-icons/search)
 
 <p align="right">(<a href="#readme-top">volver al inicio</a>)</p>
-
-
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
