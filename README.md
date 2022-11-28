@@ -87,9 +87,7 @@ _Los pasos a seguir para realizar la instalacion correcta del proyecto._
 <!-- USAGE EXAMPLES -->
 ## Usabilidad
 
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
-
-_For more examples, please refer to the [Documentation](https://example.com)_
+[![Funcionamiento de la aplicacion](https://res.cloudinary.com/dtpfo51rx/image/upload/v1669582969/swoosh/screenshots/React-App_z2omys.png)](https://www.youtube.com/watch?v=LTHNZ8RZipU)
 
 <p align="right">(<a href="#readme-top">volver al inicio</a>)</p>
 
